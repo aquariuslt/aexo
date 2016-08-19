@@ -1,0 +1,13 @@
+# Created by .ignore support plugin (hsz.mobi)
+
+
+# IDEA
+.idea
+*.iml
+
+# Node.js
+node_modules
+
+# Destination
+dest
+.cache

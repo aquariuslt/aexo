@@ -1,0 +1,48 @@
+<section ng-controller="friendLinkController as vm" ng-cloak>
+
+
+  <md-content class="md-padding" layout="row" layout-wrap flex>
+    <div layout="column" flex>
+      <md-card flex>
+        <md-card-title>
+          <md-card-title-text>
+            <span class="md-headline">
+              {{::vm.pageTitle}}
+            </span>
+          </md-card-title-text>
+        </md-card-title>
+        <md-divider>
+        </md-divider>
+
+        <md-card-content>
+          <md-list class="fixedRows" flex>
+            <md-subheader class="md-no-sticky">友情链接</md-subheader>
+
+            <md-list-item class="md-2-line" ng-repeat="friendLink in vm.friendLinkList">
+              <md-icon class="md-avatar-icon">
+                <ng-md-icon icon="assignment_ind"></ng-md-icon>
+              </md-icon>
+              <div class="md-list-item-text compact">
+                <h3>
+                  <a ng-href="{{friendLink.link}}" class="no-decoration">
+                    <span>{{friendLink.name}}</span>
+                  </a>
+                </h3>
+                <p class="small">{{friendLink.description}}</p>
+              </div>
+            </md-list-item>
+
+          </md-list>
+
+
+          <span>{{::vm.contentText}}</span>
+        </md-card-content>
+
+
+        <md-card-content>
+          <dir-disqus config="vm.disqusConfig"></dir-disqus>
+        </md-card-content>
+      </md-card>
+    </div>
+  </md-content>
+</section>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="site" ng-controller="pageController as page">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="aquariuslt,blog,site">
+  <link rel="shortcut icon" href="http://debug.aquariuslt.com/css/images/avator.png">
+  <base href="#!">
+  <title ng-bind="page.service.getTitle()">Welcome</title>
+  <!-- Load CSS Bundles Here -->
+  <!-- CSS -->
+</head>
+<body>
+<header ng-include="'app/common/views/header.html'"></header>
+<ui-view></ui-view>
+<!-- Load JavaScript Bundles Here -->
+<!-- JS -->
+</body>
+</html>

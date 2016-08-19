@@ -1,0 +1,149 @@
+<div layout="column">
+  <section layout="row" ng-controller="headerController">
+    <md-toolbar class="md-toolbar-tools md-whiteframe-glow">
+      <div>
+        <md-button class="md-icon-button"
+                   ng-click="toggleLeft()"
+                   aria-label="Menu">
+          <ng-md-icon icon="subject"></ng-md-icon>
+        </md-button>
+      </div>
+      <div>
+        <md-button ui-sref="default">
+          <a class="md-title no-decoration" ng-bind="page.service.getDefaultTitle()">Home</a>
+        </md-button>
+      </div>
+    </md-toolbar>
+  </section>
+
+  <section layout="column" ng-controller="navbarController as vm">
+    <md-sidenav
+      class="md-sidenav-left"
+      md-component-id="left"
+      md-whiteframe="4">
+
+      <div flex ng-cloak>
+        <md-content>
+          <div class="navbar-header-background-grey">
+            <md-content class="md-padding grey" flex layout-padding layout-align="center center">
+              <h2 ng-bind="page.service.getDefaultTitle()">Home</h2>
+            </md-content>
+          </div>
+          <div class="lock-size" layout="row" layout-align="center center">
+            <md-fab-speed-dial
+              md-open="isFabMenuOpen" md-direction="left" class="md-fab-bottom-right"
+              ng-click="vm.toggleFabMenuOpen()"
+              ng-class="'md-scale'"
+            >
+              <md-fab-trigger>
+                <md-button aria-label="menu" class="md-fab md-primary">
+                  <md-icon class="md-icon-button">
+                    <ng-md-icon icon="menu"></ng-md-icon>
+                  </md-icon>
+                </md-button>
+              </md-fab-trigger>
+              <!-- Author Description,no need to dynamic use variables. -->
+              <md-fab-actions>
+                <md-button ng-repeat="profileLink in vm.profileLinks"
+                           aria-label="profileLink.description"
+                           class="md-fab md-raised md-mini"
+                           ng-href="profileLink.link">
+                  <md-icon class="md-icon-button">
+                    <ng-md-icon icon="{{::profileLink.icon}}"></ng-md-icon>
+                  </md-icon>
+                </md-button>
+              </md-fab-actions>
+            </md-fab-speed-dial>
+          </div>
+          <md-content flex layout-padding>
+            <p class="md-subheader" ng-bind="page.service.getSiteDescription()"></p>
+          </md-content>
+        </md-content>
+
+      </div>
+
+
+      <md-content>
+        <!-- Toggle Menu -->
+        <div layout="column" class="md-2-line">
+          <md-button layout="row" class="md-button"
+                     ng-click="vm.toggleSubSiteMenuOpen()"
+                     flex-auto>
+            <div><span>Sub Sites</span></div>
+            <div flex></div>
+            <md-button class="md-icon-button" aria-label="menu" layout-align="end">
+              <ng-md-icon icon="{{vm.isSubSiteMenuOpen?'clear_all':'reorder'}}"></ng-md-icon>
+            </md-button>
+          </md-button>
+
+          <md-button class="md-button"
+                     layout="row"
+                     ng-show="vm.isSubSiteMenuOpen"
+                     ng-repeat="subSite in vm.subSiteList"
+                     flex-auto>
+            <a class="no-decoration" ng-href="{{::subSite.link}}">
+              <md-tooltip md-direction="right">{{::subSite.description}}</md-tooltip>
+              <span>{{::subSite.name}}</span>
+            </a>
+          </md-button>
+        </div>
+
+
+        <div layout="column" class="md-2-line"
+             ng-click="vm.toggleFriendLinkMenuOpen()">
+          <md-button layout="row" class="md-button" flex-auto>
+            <div>
+              <a ng-href="{{::vm.friendLinkRegisterLink}}" class="no-decoration">
+                <span>Friend Links</span>
+              </a>
+            </div>
+            <div flex></div>
+            <md-button class="md-icon-button" aria-label="menu" layout-align="end">
+              <ng-md-icon icon="{{vm.isFriendLinkMenuOpen?'clear_all':'reorder'}}"></ng-md-icon>
+            </md-button>
+          </md-button>
+
+          <md-button class="md-button"
+                     layout="row"
+                     ng-show="vm.isFriendLinkMenuOpen"
+                     ng-repeat="friendLink in vm.friendLinkList"
+                     flex-auto>
+            <a class="no-decoration" ng-href="{{::friendLink.link}}">
+              <md-tooltip md-direction="right">{{::friendLink.description}}</md-tooltip>
+              <span>{{::friendLink.name}}</span>
+            </a>
+          </md-button>
+        </div>
+
+
+        <!-- Unsolved Problem in Angular-Material $mdCompile Service -->
+
+        <div layout="column" class="md-2-line" ng-click="vm.toggleFeatureListOpen()">
+          <md-button layout="row" class="md-button" flex-auto>
+            <div>
+              <span>Features</span>
+            </div>
+            <div flex></div>
+            <md-button class="md-icon-button" aria-label="menu" layout-align="end">
+              <ng-md-icon icon="{{vm.isFeatureListOpen?'clear_all':'reorder'}}"></ng-md-icon>
+            </md-button>
+          </md-button>
+
+          <md-button class="md-button"
+                     layout="row"
+                     ng-show="vm.isFeatureListOpen"
+                     ng-repeat="markdown in vm.featureList"
+                     flex-auto>
+            <a class="no-decoration" ng-href="{{::markdown.link}}">
+              <md-tooltip md-direction="right">{{::markdown.description}}</md-tooltip>
+              <span>{{::markdown.name}}</span>
+            </a>
+          </md-button>
+        </div>
+
+
+      </md-content>
+    </md-sidenav>
+  </section>
+</div>
+

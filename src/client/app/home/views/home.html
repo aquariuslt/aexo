@@ -1,0 +1,45 @@
+<section ng-controller="homeController as vm" ng-cloak>
+  <div layout="row" layout-sm="column" layout-align="space-around" ng-show="vm.showProgressBar">
+    <md-progress-linear class="md-warn" md-mode="indeterminate"></md-progress-linear>
+  </div>
+  <md-content class="md-padding" layout="row" layout-wrap flex>
+    <!-- md-card template -->
+    <div layout="layout-fill" flex="flex" flex-xs="100" flex-sm="50" flex-md="33" flex-gt-md="25"
+         ng-repeat="articleSummary in vm.articleSummaryList | orderBy: '-published' ">
+      <md-card>
+        <md-card-title>
+          <md-card-title-text>
+            <span class="md-headline">
+              <a class="no-decoration" ng-href="{{::articleSummary.link | innerLinkFilter}}">
+                {{::articleSummary.title}}
+              </a>
+            </span>
+            <span class="md-subhead">{{::articleSummary.text | summaryFilter }}...</span>
+          </md-card-title-text>
+        </md-card-title>
+        <md-card-content>
+          <md-chips ng-model="articleSummary.tags" readonly="true" md-max-chips="3">
+            <md-chip-template>
+              <div class="md-caption">
+                <strong>
+                  <a ng-href="{{::vm.tagLinkPrefix}}{{$chip}}" class="no-decoration">
+                    <span>{{$chip}}</span>
+                  </a>
+                </strong>
+              </div>
+            </md-chip-template>
+          </md-chips>
+        </md-card-content>
+        <md-card-actions layout="row" layout-align="end center">
+          <div class="md-button">
+            {{::articleSummary.published | date:'yy-MM-dd' }}
+          </div>
+          <div class="md-button">
+            <a class="no-decoration" ng-href="{{::articleSummary.link | innerLinkFilter }}">View
+              More</a>
+          </div>
+        </md-card-actions>
+      </md-card>
+    </div>
+  </md-content>
+</section>

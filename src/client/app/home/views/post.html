@@ -1,0 +1,47 @@
+<section ng-controller="postController as vm" ng-cloak>
+  <div layout="column" layout-align="space-around" ng-show="vm.showProgressBar">
+    <md-progress-linear class="md-warn" md-mode="indeterminate"></md-progress-linear>
+  </div>
+
+
+  <md-content class="md-padding" layout="row" layout-wrap layout-align="space-around center">
+    <div class="post-content" layout="column" flex>
+      <md-card flex>
+        <md-card-title>
+          <md-card-title-text>
+            <span class="md-headline">
+              {{::vm.postDetail.title}}
+            </span>
+          </md-card-title-text>
+        </md-card-title>
+        <md-divider></md-divider>
+        <md-card-content>
+          <div ng-bind-html="vm.postDetail.html | trustAsHtmlFilter" class="markdown-body"></div>
+          <md-divider></md-divider>
+          <md-chips ng-model="vm.postDetail.tags" readonly="true" md-max-chips="3">
+            <md-chip-template>
+              <div class="md-caption">
+                <strong>
+                  <a ng-href="{{::vm.tagLinkPrefix}}{{$chip}}" class="no-decoration">
+                    <span>{{$chip}}</span>
+                  </a>
+                </strong>
+              </div>
+            </md-chip-template>
+          </md-chips>
+        </md-card-content>
+
+
+        <md-card-content>
+          <dir-disqus config="vm.disqusConfig"></dir-disqus>
+        </md-card-content>
+      </md-card>
+
+
+    </div>
+
+
+  </md-content>
+
+
+</section>

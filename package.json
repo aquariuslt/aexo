@@ -1,0 +1,65 @@
+{
+  "name": "Aexo",
+  "description": "Using Angular-Material.",
+  "author": {
+    "name": "Aquariuslt",
+    "email": "superaquariuslt@gmail.com",
+    "url": "http://blog.aquariuslt.com"
+  },
+  "contributors": [
+    "Aquariuslt"
+  ],
+  "homepage": "http://blog.aquariuslt.com",
+  "keywords": [
+    "web",
+    "blog"
+  ],
+  "scripts": {
+    "test": "gulp test",
+    "start": "gulp"
+  },
+  "private": true,
+  "version": "0.0.1",
+  "license": "MIT",
+  "dependencies": {
+    "angular": "^1.5.5",
+    "angular-animate": "^1.5.5",
+    "angular-aria": "^1.5.5",
+    "angular-cookies": "^1.5.5",
+    "angular-local-storage": "^0.2.7",
+    "angular-material": "^1.0.7",
+    "angular-material-icons": "^0.7.0",
+    "angular-messages": "^1.5.5",
+    "angular-route": "^1.5.5",
+    "angular-ui-router": "^0.2.18",
+    "angular-utils-disqus": "^1.0.1",
+    "async": "latest",
+    "express": "^4.13.4",
+    "lodash": "^4.6.1",
+    "marked": "^0.3.5",
+    "moment": "latest",
+    "winston": "^2.2.0"
+  },
+  "devDependencies": {
+    "concurrently": "^2.0.0",
+    "glob": "latest",
+    "gulp": "^3.9.1",
+    "gulp-angular-templatecache": "^1.8.0",
+    "gulp-clean": "^0.3.2",
+    "gulp-clean-css": "^2.0.4",
+    "gulp-concat": "^2.6.0",
+    "gulp-gh-pages": "^0.5.4",
+    "gulp-header": "^1.7.1",
+    "gulp-htmlmin": "^1.3.0",
+    "gulp-inject-string": "^1.1.0",
+    "gulp-material-icons": "^1.0.4",
+    "gulp-rename": "^1.2.2",
+    "gulp-replace": "^0.5.4",
+    "gulp-rimraf": "^0.2.0",
+    "gulp-uglify": "^1.5.3",
+    "lite-server": "^2.1.0",
+    "run-sequence": "^1.1.5",
+    "webpack": "^1.12.14",
+    "webpack-stream": "^3.1.0"
+  }
+}

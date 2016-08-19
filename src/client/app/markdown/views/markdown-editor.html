@@ -1,0 +1,90 @@
+<section ng-controller="markdownEditorController as vm" ng-cloak>
+
+
+  <md-toolbar class="md-menu-toolbar">
+
+    <div layout="column">
+      <h2 class="md-toolbar-tools md-editor-title">Markdown Editor</h2>
+      <div layout="row" layout-align="start end">
+        <md-menu-bar class="md-editor-menu">
+          <md-menu>
+            <button ng-click="$mdOpenMenu()">File</button>
+            <md-menu-content>
+              <md-menu-item>
+                <md-button>New</md-button>
+              </md-menu-item>
+            </md-menu-content>
+          </md-menu>
+          <md-menu>
+            <button ng-click="$mdOpenMenu()">Edit</button>
+            <md-menu-content>
+              <md-menu-item>
+                <md-button>Delete</md-button>
+              </md-menu-item>
+            </md-menu-content>
+          </md-menu>
+          <md-menu>
+            <button ng-click="$mdOpenMenu()">Format</button>
+            <md-menu-content>
+              <md-menu-item>
+                <md-button id="popupFormatOptionsMenu" ng-click="vm.showOptionsTagDialog($event)">
+                  Options
+                </md-button>
+              </md-menu-item>
+            </md-menu-content>
+          </md-menu>
+        </md-menu-bar>
+      </div>
+    </div>
+  </md-toolbar>
+
+  <!-- Editor & Preview-->
+  <div layout-gt-sm="row" layout="column">
+    <!-- Editor Area -->
+    <md-content layout="column" layout-fill layout-wrap flex>
+      <md-card flex>
+        <md-card-title>
+          <md-card-title-text>
+            <span class="md-headline">
+              Editor
+            </span>
+          </md-card-title-text>
+        </md-card-title>
+        <md-divider></md-divider>
+        <div class="md-padding">
+          <md-input-container class="md-block">
+            <label for="editorContent">Edit Here</label>
+            <textarea id="editorContent"
+                      ng-model="vm.editorContent"
+                      ng-model-options="{ updateOn: 'default blur', debounce: { 'default': 500, 'blur': 0 } }"
+                      ng-change="vm.compileMarkdownContent()"
+                      md-maxlength="15000"
+                      rows="800"
+                      md-select-on-focus></textarea>
+          </md-input-container>
+        </div>
+      </md-card>
+    </md-content>
+
+    <!-- Preview Area -->
+    <md-content layout="row" layout-fill layout-wrap flex>
+      <div layout="column" flex layout-fill>
+
+        <md-card flex>
+          <md-card-title>
+            <md-card-title-text>
+            <span class="md-headline">
+              Preview
+            </span>
+            </md-card-title-text>
+          </md-card-title>
+          <md-divider></md-divider>
+          <md-card-content>
+            <div ng-bind-html="vm.previewContent | trustAsHtmlFilter" class="markdown-body"></div>
+          </md-card-content>
+        </md-card>
+      </div>
+
+    </md-content>
+  </div>
+</section>

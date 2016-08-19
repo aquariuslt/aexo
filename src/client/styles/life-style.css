@@ -1,0 +1,35 @@
+/** Fuck no md-no-decoration pre-defined */
+.no-decoration {
+    text-decoration: none;
+}
+
+a:link, a:visited {
+    color: #000000;
+}
+
+/** For md-button lowercase using lowercase */
+.md-button {
+    text-transform: capitalize !important;
+}
+
+/** For md-avator compact */
+.md-item-text.compact {
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+/** For Markdown Editor menu padding*/
+.md-editor-title {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+}
+
+.md-editor-menu {
+    padding-left: 7px !important;
+    padding-right: 7px !important;
+}
+
+/** For static post container width */
+.post-content {
+    max-width: 900px;
+}

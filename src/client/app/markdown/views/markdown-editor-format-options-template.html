@@ -1,0 +1,40 @@
+<md-dialog aria-label="Format Options" ng-controller="markdownEditorFormatOptionsController as vm"
+           ng-cloak>
+
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <h4>Format Options</h4>
+      <span flex></span>
+      <div class="md-icon-button md-button "
+           ng-click="vm.cancel()">
+        <ng-md-icon icon="close"></ng-md-icon>
+      </div>
+    </div>
+  </md-toolbar>
+  <md-dialog-content>
+    <md-content class="md-padding">
+      <div layout="column" layout-wrap>
+        <div flex ng-repeat="option in vm.formatOptions">
+          <md-checkbox
+            ng-checked="vm.exists(option,vm.selectedOptions)"
+            ng-click="vm.toggle(option,vm.selectedOptions)"
+            aria-label="{{option.name}}">
+            <md-tooltip md-direction="right">
+              If you using for writing Hexo Blog.
+            </md-tooltip>
+            {{option.name}}
+          </md-checkbox>
+        </div>
+      </div>
+    </md-content>
+  </md-dialog-content>
+  <md-dialog-actions layout="row">
+    <a class="md-button" ng-click="vm.cancel()">
+      Cancel
+    </a>
+    <a class="md-button" ng-click="vm.saveOptions()">
+      Save
+    </a>
+  </md-dialog-actions>
+
+</md-dialog>

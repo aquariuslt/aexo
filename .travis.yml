@@ -1,0 +1,9 @@
+sudo: required
+language: node_js
+node_js:
+  - "4"
+env:
+  - NODE_ENV=release
+install:
+  - npm install
+  
