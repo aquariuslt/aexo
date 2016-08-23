@@ -20,7 +20,7 @@ gulp.task('cname', function (next) {
       ))
       .pipe(rename('CNAME'))
       .pipe(gulp.dest(config.dest))
-      .on('end',function(){
+      .on('end', function () {
         if (next) {
           logger.info('[task]:cname-end');
           next();

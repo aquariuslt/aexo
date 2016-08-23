@@ -12,7 +12,7 @@ var runSequence = require('run-sequence');
 
 var cname = require('./cname');
 
-gulp.task('upload', ['cname'],function () {
+gulp.task('upload', ['cname'], function () {
   var deployOptions = siteConfig.deployOptions;
   logger.info('[task]:push:', deployOptions.remoteUrl);
   gulp.src(config.dest + '/**/*')

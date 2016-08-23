@@ -30,18 +30,18 @@ module.exports = {
     }
   ],
 
-  disqusShortName: 'demo'
+  disqusShortName: 'demo',
   
   
-  /* 
-  * git deploy config,should in server site
-  * */
-  // deployOptions:{
-  //   remoteUrl:'https://github.com/Aquariuslt/aquariuslt.github.io.git',
-  //   origin:'origin',
-  //   branch:'master',
-  //   cacheDir:'.cache'
-  // },
+  /**
+   * Github Pages deploy config
+   * */
+  deployOptions:{
+    remoteUrl:'Your.Git.Repository.Url',
+    origin:'origin',
+    branch:'master',
+    cacheDir:'.cache'
+  },
 
-  // cname:'blog.aquariuslt.com'
+  cname:'Your.domain'
 };

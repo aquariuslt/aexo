@@ -12,8 +12,8 @@ var gulp = require('gulp');
 var clean = require('gulp-clean');
 
 
-gulp.task('clean',function(){
+gulp.task('clean', function () {
   logger.info('[task]:clean');
-  gulp.src(config.dest,{}).pipe(clean());
+  gulp.src(config.dest, {}).pipe(clean());
   logger.info('[task]:client end.')
 });
