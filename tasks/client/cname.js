@@ -28,6 +28,8 @@ gulp.task('cname', function (next) {
       });
   }
   else {
+    logger.info('[task]:cname:cname config not found,skip');
+    logger.info('[task]:cname-end.');
     next();
   }
 });

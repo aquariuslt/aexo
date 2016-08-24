@@ -65,6 +65,6 @@ function constructExtraInfo(fileNamePrefix, metadata) {
   var publishPrefix = published.format('YYYY/MM/DD');
 
   //noinspection JSUnresolvedFunction
-  metadata.published = published.toDate();
+  metadata.published = metadata.date;
   metadata.link = publishPrefix + '/' + fileNamePrefix;
 }
