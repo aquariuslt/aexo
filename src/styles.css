@@ -1,0 +1,8 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~reset-css/reset.css';
+@import '~@covalent/core/theming/prebuilt/blue-orange.css';
+@import '~@covalent/core/common/platform.css';
+@import 'fonts.css';
+@import 'webkit.css';
+@import 'markdown.css';
+

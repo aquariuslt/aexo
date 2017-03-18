@@ -1,13 +1,22 @@
-# Created by .ignore support plugin (hsz.mobi)
+# See http://help.github.com/ignore-files/ for more about ignoring files.
 
+# Compiled output
+/dist
+/tmp
+/out-tsc
+/build
+*.log
 
-# IDEA
-.idea
-*.iml
+# Dependencies
+/node_modules
 
-# Node.js
-node_modules
+# IDEs and editors
+/.idea
 
-# Destination
-dest
-.cache
+# E2E
+/e2e/*.js
+/e2e/*.map
+
+# System Files
+.DS_Store
+Thumbs.db

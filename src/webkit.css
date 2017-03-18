@@ -1,0 +1,9 @@
+::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
