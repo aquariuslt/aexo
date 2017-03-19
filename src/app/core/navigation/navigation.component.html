@@ -1,0 +1,27 @@
+<!-- Side Nav -->
+<section class="sidenav"
+         layout="row"
+         [hidden]="sideNavState =='hide'">
+  <div class="sidenav-content md-whiteframe-2dp"
+       layout-fill
+       [@sideNavState]="sideNavState">
+
+  </div>
+
+  <div class="sidenav-mark md-whiteframe-2dp" flex
+       [@sideNavMarkState]="sideNavState"
+       (click)="toggleSideNavState()">
+  </div>
+</section>
+<!-- Header -->
+<section layout="row">
+
+  <md-toolbar class="always-top md-whiteframe-2dp">
+    <button md-icon-button (click)="toggleSideNavState()">
+      <md-icon>menu</md-icon>
+    </button>
+  </md-toolbar>
+  <md-toolbar>
+
+  </md-toolbar>
+</section>

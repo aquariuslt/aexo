@@ -1,10 +1,42 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from "@angular/core";
+import {CommonModule} from "@angular/common";
+import {DisqusModule} from "ng2-awesome-disqus";
+import {MaterialModule} from "@angular/material";
+import {CovalentLayoutModule, CovalentCoreModule} from "@covalent/core";
+import {BlogRoutingModule} from "./blog-routing.module";
+import {CategoryService} from "./shared/category.service";
+import {TagService} from "./shared/tag.service";
+import {LogFactory} from "../shared/log.factory";
+import {CoreModule} from "../core/core.module";
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    MaterialModule,
+    CovalentCoreModule,
+    CovalentLayoutModule,
+    DisqusModule,
+
+
+    CoreModule,
+    BlogRoutingModule,
   ],
-  declarations: []
+  declarations: [],
+  providers: [
+    CategoryService,
+    TagService
+  ]
 })
-export class BlogModule { }
+export class BlogModule {
+
+  private logger = this.logFactory.getLog(BlogModule.name);
+
+  constructor(private logFactory: LogFactory,
+              private categoryService: CategoryService,
+              private tagService: TagService) {
+    let blog = this;
+    blog.logger.info('Blog Module is loaded');
+    blog.categoryService.registerNavigationMenu();
+    blog.tagService.registerNavigationMenu();
+  }
+}

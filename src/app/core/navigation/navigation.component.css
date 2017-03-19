@@ -1,0 +1,23 @@
+/* Header */
+.always-top {
+  position: absolute;
+  z-index: 500;
+}
+
+/* SideNav */
+.sidenav {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.sidenav-content {
+  width: 300px;
+  background: #ffffff;
+}
+
+.sidenav-mark {
+  opacity: 0.4;
+  background: grey;
+}
+
