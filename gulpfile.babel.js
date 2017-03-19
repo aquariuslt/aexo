@@ -1,4 +1,5 @@
 import "./src/tasks/cname";
+import "./src/tasks/properties";
 import "./src/tasks/clean";
 import "./src/tasks/posts";
 import "./src/tasks/categories";

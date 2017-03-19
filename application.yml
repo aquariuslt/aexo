@@ -1,0 +1,29 @@
+# This is AEXO Application YML
+# Update your config here
+
+
+# Blog Variables
+blog:
+  name: 'Aquariuslt Blog'
+  author: 'Aquariuslt'
+  description: 'Coder,WoWer'
+
+
+  externalLinks:
+
+
+
+
+
+
+# Blog Deploy Options
+
+# Domain
+cname: 'blog.aquariuslt.com'
+
+deploy:
+  repo: 'https://github.com/Aquariuslt/aquariuslt.github.io.git'
+  remote: 'origin'
+  branch: 'master'
+  cacheDir: '.cache'
+  clone: '.cache'
