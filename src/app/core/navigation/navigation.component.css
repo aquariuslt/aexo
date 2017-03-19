@@ -21,3 +21,14 @@
   background: grey;
 }
 
+.avator {
+  width: 100%;
+  height: auto;
+  padding: 15px;
+  border-radius: 50%;
+}
+
+.avator-background {
+  opacity: 0.8;
+  min-height: 150px;
+}

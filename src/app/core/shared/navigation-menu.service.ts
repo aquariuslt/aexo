@@ -9,11 +9,10 @@ export class NavigationMenuService {
   private logger = this.logFactory.getLog(NavigationMenuService.name);
 
   private menus = [];
-  private menus$: Subject<NavigationMenu> = null;
+  private menus$: Subject<NavigationMenu> = new Subject<NavigationMenu>();
 
   constructor(private logFactory: LogFactory) {
     let svc = this;
-    svc.menus$ = new Subject<NavigationMenu>();
     svc.logger.info('Navigation Menu Service is running.');
   }
 
@@ -22,15 +21,11 @@ export class NavigationMenuService {
     return svc.menus$;
   }
 
-  public addInternalMenu(menu): void {
+  public addNavigationMenu(menu): void {
     let svc = this;
     let navigationMenu = new NavigationMenu(menu);
     svc.menus.push(navigationMenu);
     svc.menus$.next(navigationMenu);
   }
 
-  public addExternalLinksMenu(menu): void {
-    let svc = this;
-    svc.menus.push(new NavigationMenu(menu));
-  }
 }

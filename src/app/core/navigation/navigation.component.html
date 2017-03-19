@@ -4,8 +4,42 @@
          [hidden]="sideNavState =='hide'">
   <div class="sidenav-content md-whiteframe-2dp"
        layout-fill
+       layout="column"
        [@sideNavState]="sideNavState">
 
+
+    <div class="md-padding avator-background" layout="row">
+      <div flex="30">
+        <img class="avator">
+      </div>
+      <div class="md-padding" layout="column" layout-align="end end" flex>
+        <h4>Blog Author</h4>
+        <span>Blog Description</span>
+      </div>
+    </div>
+
+
+    <div *ngFor="let menu of menus;let i = index" layout="column">
+      <button md-button flex
+              (click)="toggleMenuOpenState(i)">
+        <div flex layout="row">
+          <span>{{menu.label}}</span>
+          <span flex></span>
+          <div layout="row" layout-align="center center">
+            <md-icon [@menuOpenState]="menuOpenStates[i]">
+              keyboard_arrow_down
+            </md-icon>
+          </div>
+        </div>
+      </button>
+      <button md-button flex *ngFor="let subMenu of menu.links"
+              [@subMenuExpandState]="menuOpenStates[i]">
+        <div flex layout="row">
+          <span>{{subMenu.displayName}}</span>
+          <span flex></span>
+        </div>
+      </button>
+    </div>
   </div>
 
   <div class="sidenav-mark md-whiteframe-2dp" flex

@@ -31,7 +31,7 @@ export class CategoryService {
         return response.json();
       })
       .subscribe(function (categories) {
-        svc.navigationMenuService.addInternalMenu(svc.buildCategoryMenus(categories));
+        svc.navigationMenuService.addNavigationMenu(svc.buildCategoryMenus(categories));
       })
   }
 

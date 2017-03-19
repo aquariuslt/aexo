@@ -32,7 +32,7 @@ export class TagService {
         return response.json();
       })
       .subscribe(function (tags) {
-        svc.navigationMenuService.addInternalMenu(svc.buildTagMenus(tags));
+        svc.navigationMenuService.addNavigationMenu(svc.buildTagMenus(tags));
       })
   }
 
