@@ -1,0 +1,20 @@
+<div class="category-detail" layout="row" layout-align="none center">
+  <span class="category-title" layout="row" layout-align="center center">Category:</span>
+  <md-chip-list>
+    <md-chip>{{categoryName}}</md-chip>
+  </md-chip-list>
+</div>
+<section class="post-list"
+         layout-xs="column"
+         layout-gt-xs="row"
+         layout-wrap>
+  <post-card *ngFor="let post of postList"
+             flex-xs="100"
+             flex-sm="33"
+             flex-md="33"
+             flex-lg="25"
+             flex-xl="20"
+             flex="50"
+             [data]="post">
+  </post-card>
+</section>

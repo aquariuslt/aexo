@@ -1,0 +1,15 @@
+.post-list {
+  padding: 3px;
+}
+
+.category-detail{
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 5px;
+}
+
+.category-title{
+  font-weight: 600;
+  font-size: 18px;
+  padding-right: 10px;
+}

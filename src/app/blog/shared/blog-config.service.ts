@@ -9,6 +9,7 @@ import {NavigationMenu} from "../../core/shared/navigation-menu.model";
 import {NavigationLink} from "../../core/shared/navigation-link.model";
 import * as _ from "lodash";
 import {Author} from "../../core/shared/author.model";
+import {BlogTitleService} from "./blog-title.service";
 @Injectable()
 export class BlogConfigService {
 
@@ -17,6 +18,7 @@ export class BlogConfigService {
 
 
   constructor(private http: Http,
+              private blogTitleService:BlogTitleService,
               private navigationMenuService: NavigationMenuService,
               private logFactory: LogFactory) {
     let svc = this;
@@ -72,4 +74,27 @@ export class BlogConfigService {
         }));
       })
   }
+
+  public registerApplicationTitle() {
+    let svc = this;
+    svc.http.get(svc.datasource.application)
+      .map(function (response) {
+        return response.json();
+      })
+      .subscribe(function (applicationProperties) {
+        svc.navigationMenuService.applyApplicationTitle(applicationProperties.blog.name);
+        svc.blogTitleService.loadBaseTitle(applicationProperties.blog.name);
+      })
+  }
+
+  public getDisqusConfig(){
+    let svc = this;
+    return svc.http.get(svc.datasource.application)
+      .map(function (response) {
+        let applicationProperties = response.json();
+        return applicationProperties.blog.disqus;
+      })
+  }
+
+
 }

@@ -1,0 +1,38 @@
+.post-card {
+  padding: 5px !important;
+  height: 100%;
+}
+
+.post-card-header {
+  padding: 15px;
+}
+
+.post-card-title {
+  font-size: 20px;
+  padding-bottom: 5px;
+}
+
+.post-card-subtitle {
+  font-size: 15px;
+  opacity: 0.5;
+  padding-bottom: 5px;
+}
+
+.post-card-summary {
+  padding: 5px 15px;
+  line-break: auto;
+  line-height: 24px;
+}
+
+.post-card-actions {
+  padding: 10px 15px;
+}
+
+.no-decoration {
+  text-decoration: none;
+}
+
+
+.tag-chip{
+  margin-bottom:5px !important;
+}

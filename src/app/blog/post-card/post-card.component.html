@@ -1,0 +1,29 @@
+<section class="post-card">
+  <div layout-fill layout="column" class="md-whiteframe-2dp">
+    <div class="post-card-header">
+      <div class="post-card-title">
+        <a class="no-decoration"
+           [routerLink]="'/post/'+post.link"
+        >{{post.title}}</a>
+      </div>
+      <div class="post-card-subtitle">{{post.created}}</div>
+    </div>
+    <div class="post-card-summary">
+      {{post.summary}}
+    </div>
+
+    <div layout="row"
+         class="post-card-actions"
+         layout-align="start end" flex>
+      <md-chip-list>
+        <md-chip class="tag-chip" *ngFor="let tag of post.tags">
+          <a [routerLink]="'/tag/'+tag">{{tag}}</a>
+        </md-chip>
+      </md-chip-list>
+      <span flex></span>
+      <button md-button [routerLink]="'/post/'+post.link">
+        <span>View More</span>
+      </button>
+    </div>
+  </div>
+</section>

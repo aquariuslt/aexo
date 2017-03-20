@@ -1,0 +1,38 @@
+<div class="tag-list" layout="row">
+  <span class="tag-title" layout="row" layout-align="center center">
+    Tags:
+  </span>
+</div>
+<div class="md-padding">
+  <md-chip-list>
+    <md-chip *ngFor="let tag of tagList"
+             (click)="selectTag(tag.tag)"
+             class="tag-chip"
+             [ngClass]="{
+               'selected': selectedTag==tag.tag,
+               'non-selected': selectedTag!=tag.tag
+             }"
+    >
+      <span>
+        {{tag.tag}}
+      </span>
+    </md-chip>
+  </md-chip-list>
+</div>
+
+<div class="md-padding">
+  <md-list-item *ngFor="let post of selectedPostList" >
+    <div layout="row" layout-align="start center">
+      <md-icon>book</md-icon>
+      <div layout="row" layout-align="center center">
+        <a [routerLink]="'/post/'+post.link">
+          <span>{{post.title}}</span>
+        </a>
+      </div>
+      <span flex></span>
+      <div layout="row" layout-align="center center">
+        <span class="post-date">{{post.created}}</span>
+      </div>
+    </div>
+  </md-list-item>
+</div>

@@ -1,0 +1,49 @@
+<section class="md-padding"
+         layout="row"
+         layout-align="center">
+  <div class="post-detail md-whiteframe-2dp">
+    <div class="post-detail-header">
+      <div class="post-detail-title">
+        {{post.title}}
+      </div>
+      <div class="post-detail-subtitle">
+        {{post.created}}
+      </div>
+    </div>
+
+    <div class="post-detail-content">
+      <div [innerHtml]="postHtmlContent" class="markdown-body">
+
+      </div>
+    </div>
+
+    <div class="post-detail-actions">
+      <div class="post-meta" *ngIf="post.category!=undefined">
+        Category:
+      </div>
+
+      <md-chip *ngIf="post.category!=undefined">
+        <a [routerLink]="'/category/'+post.category">{{post.category}}</a>
+      </md-chip>
+
+
+      <div class="post-meta">
+        Tags:
+      </div>
+      <md-chip-list>
+        <md-chip *ngFor="let tag of post.tags">
+          <a [routerLink]="'/tag/'+tag">{{tag}}</a>
+        </md-chip>
+      </md-chip-list>
+    </div>
+
+    <div class="post-detail-actions" *ngIf="disqus && disqus.enable">
+      <div flex>
+        <disqus [shortname]="disqus.shortName"
+                [identifier]="disqus.identifier"
+                [url]="disqus.url">
+        </disqus>
+      </div>
+    </div>
+  </div>
+</section>

@@ -15,6 +15,9 @@ export class NavigationMenuService {
   private author = new Author();
   private author$: Subject<Author> = new Subject<Author>();
 
+  private title :string = '';
+  private title$ :Subject<string> = new Subject();
+
   constructor(private logFactory: LogFactory) {
     let svc = this;
     svc.logger.info('Navigation Menu Service is running.');
@@ -30,6 +33,11 @@ export class NavigationMenuService {
     return svc.author$;
   }
 
+  public getTitle(){
+    let svc = this;
+    return svc.title$;
+  }
+
   public addNavigationMenu(menu): void {
     let svc = this;
     let navigationMenu = new NavigationMenu(menu);
@@ -41,6 +49,12 @@ export class NavigationMenuService {
     let svc = this;
     svc.author = author;
     svc.author$.next(author);
+  }
+
+  public applyApplicationTitle(applicationTitle:string){
+    let svc = this;
+    svc.title = applicationTitle;
+    svc.title$.next(applicationTitle);
   }
 
 }

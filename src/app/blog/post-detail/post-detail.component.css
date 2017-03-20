@@ -1,0 +1,32 @@
+.post-detail {
+  max-width: 900px;
+  width:100%;
+}
+
+.post-detail-header {
+  padding: 15px;
+}
+
+.post-detail-title {
+  font-size: 30px;
+  padding-bottom: 5px;
+}
+
+.post-detail-subtitle {
+  opacity: 0.5;
+  font-size: 20px;
+  padding-bottom: 5px;
+}
+
+.post-meta{
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.post-detail-content {
+  padding: 15px;
+}
+
+.post-detail-actions {
+  padding: 15px;
+}

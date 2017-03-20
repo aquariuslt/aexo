@@ -1,0 +1,40 @@
+.post-list {
+  padding: 3px;
+}
+
+.tag-list{
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 10px;
+}
+
+.tag-title{
+  font-weight: 600;
+  font-size: 18px;
+  padding-right: 10px;
+}
+
+.tag-chip{
+  margin-bottom:5px !important;
+}
+.non-selected{
+  background:grey;
+}
+
+.non-selected:hover{
+  cursor: pointer;
+}
+
+.selected{
+  background:#1990df;
+}
+
+.selected:hover{
+  cursor: pointer;
+}
+
+.post-date{
+  font-size: 15px;
+  opacity: 0.5;
+  padding-bottom: 5px;
+}

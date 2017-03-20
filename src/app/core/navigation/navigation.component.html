@@ -13,8 +13,8 @@
         <img class="avator" [src]="author.avatorUrl">
       </div>
       <div layout="column" layout-align="center center" flex>
-        <span class="author">{{author.author}}</span>
-        <span class="author-description">{{author.description}}</span>
+        <span class="author raised">{{author.author}}</span>
+        <span class="author-description raised">{{author.description}}</span>
       </div>
     </div>
 
@@ -23,10 +23,10 @@
       <button md-button flex
               (click)="toggleMenuOpenState(i)">
         <div flex layout="row">
-          <span>{{menu.label}}</span>
+          <span class="raised">{{menu.label}}</span>
           <span flex></span>
           <div layout="row" layout-align="center center">
-            <md-icon [@menuOpenState]="menuOpenStates[i]">
+            <md-icon class="raised" [@menuOpenState]="menuOpenStates[i]">
               keyboard_arrow_down
             </md-icon>
           </div>
@@ -35,7 +35,10 @@
       <button md-button flex *ngFor="let subMenu of menu.links"
               [@subMenuExpandState]="menuOpenStates[i]">
         <div flex layout="row">
-          <span>{{subMenu.displayName}}</span>
+          <span class="raised" *ngIf="subMenu.external"
+                (click)="openExternalLink(subMenu.url)">{{subMenu.displayName}}</span>
+          <span class="raised" *ngIf="!subMenu.external"
+                [routerLink]="subMenu.link">{{subMenu.displayName}}</span>
           <span flex></span>
         </div>
       </button>
@@ -50,10 +53,12 @@
 <!-- Header -->
 <section layout="row">
 
-  <md-toolbar class="always-top md-whiteframe-2dp">
+  <md-toolbar color="primary" class="always-top md-whiteframe-2dp">
     <button md-icon-button (click)="toggleSideNavState()">
       <md-icon>menu</md-icon>
     </button>
+    <a [routerLink]="'/'" class="raised">{{title}}</a>
+    <div flex></div>
   </md-toolbar>
   <md-toolbar>
 

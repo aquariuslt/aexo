@@ -9,6 +9,15 @@ import {TagService} from "./shared/tag.service";
 import {LogFactory} from "../shared/log.factory";
 import {CoreModule} from "../core/core.module";
 import {BlogConfigService} from "./shared/blog-config.service";
+import {BlogTitleService} from "./shared/blog-title.service";
+import {PostService} from "./shared/post.service";
+import {PostCardComponent} from "./post-card/post-card.component";
+import {PostDetailComponent} from "./post-detail/post-detail.component";
+import {PostListComponent} from "./post-list/post-list.component";
+import {TagDetailComponent} from "./tag-detail/tag-detail.component";
+import {TagListComponent} from "./tag-list/tag-list.component";
+import {CategoryDetailComponent} from "./category-detail/category-detail.component";
+import {CategoryListComponent} from "./category-list/category-list.component";
 
 @NgModule({
   imports: [
@@ -22,11 +31,21 @@ import {BlogConfigService} from "./shared/blog-config.service";
     CoreModule,
     BlogRoutingModule,
   ],
-  declarations: [],
+  declarations: [
+    PostCardComponent,
+    PostDetailComponent,
+    PostListComponent,
+    TagDetailComponent,
+    TagListComponent,
+    CategoryDetailComponent,
+    CategoryListComponent
+  ],
   providers: [
     CategoryService,
     TagService,
-    BlogConfigService
+    BlogConfigService,
+    BlogTitleService,
+    PostService
   ]
 })
 export class BlogModule {
@@ -43,6 +62,7 @@ export class BlogModule {
     blog.tagService.registerNavigationMenu();
     blog.blogConfigService.registerNavigationMenu();
 
+    blog.blogConfigService.registerApplicationTitle();
     blog.blogConfigService.registerAuthorInfo();
   }
 }

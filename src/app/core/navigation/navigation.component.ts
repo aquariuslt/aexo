@@ -16,7 +16,8 @@ import {Author} from "../shared/author.model";
         'z-index': 1000
       })),
       state('hide', style({
-        display: 'none'
+        display: 'none',
+        'z-index': -1000
       })),
       transition('hide => show', [
         style({
@@ -28,7 +29,8 @@ import {Author} from "../shared/author.model";
     ]),
     trigger('sideNavMarkState', [
       state('hide', style({
-        display: 'none'
+        display: 'none',
+        'z-index': -1000
       })),
       state('show', style({
         'z-index': 1000
@@ -83,6 +85,7 @@ export class NavigationComponent implements OnInit {
   private menus: Array<NavigationMenu> = [];
   private menuOpenStates = [];
 
+  private title: string = '';
   private author: Author = new Author();
 
   private logger = this.logFactory.getLog(NavigationComponent.name);
@@ -107,6 +110,12 @@ export class NavigationComponent implements OnInit {
         function next(data) {
           vm.author = data;
         }
+      );
+    vm.navigationMenuService.getTitle()
+      .subscribe(
+        function next(data) {
+          vm.title = data;
+        }
       )
   }
 
@@ -122,6 +131,10 @@ export class NavigationComponent implements OnInit {
       vm.menuOpenStates[index] = _.isEqual(vm.menuOpenStates[index], 'opened') ? 'closed' : 'opened';
       vm.logger.info('Toggle menu:' + index + ':' + vm.menuOpenStates[index]);
     }
+  }
+
+  openExternalLink(url: string): void {
+    window.open(url, '_blank');
   }
 
 }
