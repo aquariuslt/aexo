@@ -10,11 +10,11 @@
 
     <div class="md-padding avator-background" layout="row">
       <div flex="30">
-        <img class="avator">
+        <img class="avator" [src]="author.avatorUrl">
       </div>
-      <div class="md-padding" layout="column" layout-align="end end" flex>
-        <h4>Blog Author</h4>
-        <span>Blog Description</span>
+      <div layout="column" layout-align="center center" flex>
+        <span class="author">{{author.author}}</span>
+        <span class="author-description">{{author.description}}</span>
       </div>
     </div>
 

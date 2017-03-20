@@ -8,7 +8,7 @@ import {CategoryService} from "./shared/category.service";
 import {TagService} from "./shared/tag.service";
 import {LogFactory} from "../shared/log.factory";
 import {CoreModule} from "../core/core.module";
-import {ExternalLinkService} from "./shared/external-link.service";
+import {BlogConfigService} from "./shared/blog-config.service";
 
 @NgModule({
   imports: [
@@ -26,7 +26,7 @@ import {ExternalLinkService} from "./shared/external-link.service";
   providers: [
     CategoryService,
     TagService,
-    ExternalLinkService
+    BlogConfigService
   ]
 })
 export class BlogModule {
@@ -36,11 +36,13 @@ export class BlogModule {
   constructor(private logFactory: LogFactory,
               private categoryService: CategoryService,
               private tagService: TagService,
-              private externalLinkService: ExternalLinkService) {
+              private blogConfigService: BlogConfigService) {
     let blog = this;
     blog.logger.info('Blog Module is loaded');
     blog.categoryService.registerNavigationMenu();
     blog.tagService.registerNavigationMenu();
-    blog.externalLinkService.registerNavigationMenu();
+    blog.blogConfigService.registerNavigationMenu();
+
+    blog.blogConfigService.registerAuthorInfo();
   }
 }

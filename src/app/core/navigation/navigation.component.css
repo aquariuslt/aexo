@@ -32,3 +32,11 @@
   opacity: 0.8;
   min-height: 150px;
 }
+
+.author {
+  font-size: 14px;
+}
+
+.author-description {
+  font-size: 14px;
+}

@@ -5,22 +5,66 @@
 # Blog Variables
 blog:
   name: 'Aquariuslt Blog'
+  # Avator Relative URL, example: assets/images/avator.png
+  avator: 'assets/images/avator.png'
   author: 'Aquariuslt'
   description: 'Coder,WoWer'
-
-
   externalLinks:
+    -
+      label: 'Social'
+      links:
+        -
+          url: 'https://github.com/aquariuslt'
+          displayName: 'Github'
+          description: 'Github'
+        -
+          url: 'https://twitter.com/superaquariuslt'
+          displayName: 'Twitter'
+          description: 'Twitter'
+        -
+          url: 'https://aquariuslt.com'
+          displayName: 'Posts Archive'
+          description: 'Past Version Blog'
+
+    -
+      label: 'Friend Links'
+      links:
+        -
+          displayName: 'wxsm blog'
+          url: 'https://wxsm.space'
+          description: 'Kary Gor博客,前端大神'
+        -
+          displayName: 'lousama'
+          url: 'http://lousama.com'
+          description: ''
+        -
+          displayName: 'NotFound404'
+          url: 'https://github.com/404NoFound'
+          description: '车底良哥'
 
 
 
+# Hidden Category Lists
+  categories:
+    filter: true
+    hidden:
+      - 'Else'
+
+  # Enable About Page
+  about:
+    enable: true
 
 
+  # Disqus Config
+  disqus:
+    enable: true
+    shortName: 'aquariuslt'
 
 # Blog Deploy Options
-
 # Domain
 cname: 'blog.aquariuslt.com'
 
+# Deploy
 deploy:
   repo: 'https://github.com/Aquariuslt/aquariuslt.github.io.git'
   remote: 'origin'

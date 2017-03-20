@@ -4,6 +4,7 @@ import {LogFactory} from "../../shared/log.factory";
 import {NavigationMenuService} from "../shared/navigation-menu.service";
 import {NavigationMenu} from "../shared/navigation-menu.model";
 import * as _ from "lodash";
+import {Author} from "../shared/author.model";
 
 @Component({
   selector: 'navigation',
@@ -39,7 +40,7 @@ import * as _ from "lodash";
         animate('0.1s 0.2s ease-in')
       ])
     ]),
-    trigger('menuOpenState',[
+    trigger('menuOpenState', [
       state('opened', style({
         transform: 'rotate(0deg)'
       })),
@@ -53,7 +54,7 @@ import * as _ from "lodash";
         animate('0.5s ease-out')
       ])
     ]),
-    trigger('subMenuExpandState',[
+    trigger('subMenuExpandState', [
       state('opened', style({
         height: '*'
       })),
@@ -82,6 +83,7 @@ export class NavigationComponent implements OnInit {
   private menus: Array<NavigationMenu> = [];
   private menuOpenStates = [];
 
+  private author: Author = new Author();
 
   private logger = this.logFactory.getLog(NavigationComponent.name);
 
@@ -100,7 +102,12 @@ export class NavigationComponent implements OnInit {
           });
         }
       );
-
+    vm.navigationMenuService.getAuthor()
+      .subscribe(
+        function next(data) {
+          vm.author = data;
+        }
+      )
   }
 
 
