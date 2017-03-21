@@ -5,7 +5,7 @@
   "scripts": {
     "ng": "ng",
     "start": "gulp build && ng serve",
-    "start:dev": "ng serve",
+    "start:dev": "ng serve --port 5000",
     "build": "ng build",
     "lint": "ng lint"
   },

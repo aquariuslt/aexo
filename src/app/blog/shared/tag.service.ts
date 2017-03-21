@@ -51,4 +51,14 @@ export class TagService {
     })
   }
 
+  public getTagList() {
+    let svc = this;
+    svc.logger.info('Load Tags from:', svc.datasource.tags);
+    return svc.http.get(svc.datasource.tags)
+      .map(function (response) {
+        return response.json();
+      });
+  }
+
+
 }

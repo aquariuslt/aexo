@@ -14,7 +14,6 @@ import {BlogConfigService} from "../shared/blog-config.service";
   providers: [
     BlogConfigService,
     PostService,
-    BlogTitleService,
     Location,
     {
       provide: LocationStrategy,

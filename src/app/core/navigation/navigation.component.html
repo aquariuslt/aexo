@@ -1,18 +1,17 @@
 <!-- Side Nav -->
 <section class="sidenav"
-         layout="row"
-         [hidden]="sideNavState =='hide'">
+         [hidden]="sideNavState =='hide'"
+         [@sideNavState]="sideNavState"
+         layout="row">
   <div class="sidenav-content md-whiteframe-2dp"
        layout-fill
        layout="column"
-       [@sideNavState]="sideNavState">
-
-
+       [@sideNavContentState]="sideNavState">
     <div class="md-padding avator-background" layout="row">
-      <div flex="30">
+      <div flex="35">
         <img class="avator" [src]="author.avatorUrl">
       </div>
-      <div layout="column" layout-align="center center" flex>
+      <div layout="column" class="md-padding" layout-align="end end" flex>
         <span class="author raised">{{author.author}}</span>
         <span class="author-description raised">{{author.description}}</span>
       </div>
@@ -33,34 +32,30 @@
         </div>
       </button>
       <button md-button flex *ngFor="let subMenu of menu.links"
+              (click)="openLink(subMenu)"
               [@subMenuExpandState]="menuOpenStates[i]">
         <div flex layout="row">
-          <span class="raised" *ngIf="subMenu.external"
-                (click)="openExternalLink(subMenu.url)">{{subMenu.displayName}}</span>
-          <span class="raised" *ngIf="!subMenu.external"
-                [routerLink]="subMenu.link">{{subMenu.displayName}}</span>
+          <span class="raised">{{subMenu.displayName}}</span>
           <span flex></span>
         </div>
       </button>
     </div>
   </div>
 
-  <div class="sidenav-mark md-whiteframe-2dp" flex
+  <div class="sidenav-mark" flex
        [@sideNavMarkState]="sideNavState"
+       [hidden]="sideNavState =='hide'"
        (click)="toggleSideNavState()">
   </div>
 </section>
 <!-- Header -->
-<section layout="row">
+<section layout="column">
 
-  <md-toolbar color="primary" class="always-top md-whiteframe-2dp">
+  <md-toolbar [color]="'primary'" class="always-top md-whiteframe-2dp">
     <button md-icon-button (click)="toggleSideNavState()">
       <md-icon>menu</md-icon>
     </button>
     <a [routerLink]="'/'" class="raised">{{title}}</a>
     <div flex></div>
-  </md-toolbar>
-  <md-toolbar>
-
   </md-toolbar>
 </section>

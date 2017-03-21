@@ -59,5 +59,16 @@ export class CategoryService {
     });
   }
 
+  public getCategoryList() {
+    let svc = this;
+    svc.logger.info('Load Categories from:', svc.datasource.categories);
+    return svc.http.get(svc.datasource.categories)
+      .map(function (response) {
+        return response.json();
+      });
+  }
+
+
+
 
 }

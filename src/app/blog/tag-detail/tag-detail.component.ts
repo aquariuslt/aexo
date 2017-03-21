@@ -6,8 +6,7 @@ import {BlogTitleService} from "../shared/blog-title.service";
 
 @Component({
   providers: [
-    PostService,
-    BlogTitleService
+    PostService
   ],
   selector: 'tag-detail',
   templateUrl: './tag-detail.component.html',

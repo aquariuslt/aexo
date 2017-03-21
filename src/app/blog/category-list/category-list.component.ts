@@ -2,11 +2,12 @@ import {Component, OnInit} from "@angular/core";
 import {PostService} from "../shared/post.service";
 import {LogFactory} from "../../shared/log.factory";
 import {BlogTitleService} from "../shared/blog-title.service";
+import {CategoryService} from "../shared/category.service";
 
 @Component({
   providers: [
     PostService,
-    BlogTitleService
+    CategoryService
   ],
   selector: 'category-list',
   templateUrl: './category-list.component.html',
@@ -16,6 +17,7 @@ export class CategoryListComponent implements OnInit {
 
   constructor(private logFactory: LogFactory,
               private posts: PostService,
+              private categoryService: CategoryService,
               private titleService: BlogTitleService) {
   }
 
@@ -34,7 +36,7 @@ export class CategoryListComponent implements OnInit {
 
   queryPostList() {
     let vm = this;
-    vm.posts.getCategoryList()
+    vm.categoryService.getCategoryList()
       .subscribe(function (categoryList) {
         vm.categoryList = categoryList;
         if (categoryList.length >= 1) {

@@ -1,7 +1,6 @@
 /* Header */
 .always-top {
-  position: absolute;
-  z-index: 500;
+  position: relative;
 }
 
 /* SideNav */
@@ -29,7 +28,6 @@
 }
 
 .avator-background {
-  opacity: 0.8;
   min-height: 150px;
 }
 
