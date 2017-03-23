@@ -7,11 +7,13 @@
        layout-fill
        layout="column"
        [@sideNavContentState]="sideNavState">
-    <div class="md-padding avator-background" layout="row">
-      <div flex="35">
-        <img class="avator" [src]="author.avatorUrl">
+    <div class="avator-background" layout="column">
+      <div layout="row">
+        <div flex="20">
+          <img class="avator" [src]="author.avatorUrl">
+        </div>
       </div>
-      <div layout="column" class="md-padding" layout-align="end end" flex>
+      <div layout="column" layout-align="none center"  flex>
         <span class="author raised">{{author.author}}</span>
         <span class="author-description raised">{{author.description}}</span>
       </div>
@@ -26,7 +28,7 @@
           <span flex></span>
           <div layout="row" layout-align="center center">
             <md-icon class="raised" [@menuOpenState]="menuOpenStates[i]">
-              keyboard_arrow_down
+              keyboard_arrow_up
             </md-icon>
           </div>
         </div>

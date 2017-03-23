@@ -18,7 +18,7 @@ export class BlogTitleService {
   private logger = this.logFactory.getLog(BlogTitleService.name);
 
   private baseTitle: string = '';
-  private baseTitle$ :Subject<string> = new Subject();
+  private baseTitle$: Subject<string> = new Subject();
 
   public loadBaseTitle(baseTitle: string) {
     let svc = this;

@@ -2,38 +2,39 @@
   padding: 3px;
 }
 
-.tag-list{
+.tag-list {
   padding-left: 15px;
   padding-right: 15px;
   padding-top: 10px;
 }
 
-.tag-title{
+.tag-title {
   font-weight: 600;
   font-size: 18px;
   padding-right: 10px;
 }
 
-.tag-chip{
-  margin-bottom:5px !important;
-}
-.non-selected{
-  background:grey;
+.tag-chip {
+  margin-bottom: 5px !important;
 }
 
-.non-selected:hover{
+.non-selected {
+  background: grey;
+}
+
+.non-selected:hover {
   cursor: pointer;
 }
 
-.selected{
-  background:#1990df;
+.selected {
+  background: #1990df;
 }
 
-.selected:hover{
+.selected:hover {
   cursor: pointer;
 }
 
-.post-date{
+.post-date {
   font-size: 15px;
   opacity: 0.5;
   padding-bottom: 5px;

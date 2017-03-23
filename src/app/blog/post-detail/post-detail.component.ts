@@ -52,7 +52,7 @@ export class PostDetailComponent implements OnInit {
   loadDisqusConfig() {
     let vm = this;
     vm.blogConfigService.getDisqusConfig()
-      .subscribe(function(disqusConfig){
+      .subscribe(function (disqusConfig) {
         vm.disqusConfig = disqusConfig;
       });
   }

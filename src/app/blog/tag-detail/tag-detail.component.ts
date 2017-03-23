@@ -30,13 +30,13 @@ export class TagDetailComponent implements OnInit {
     vm.queryPostList();
   }
 
-  queryPostList(){
+  queryPostList() {
     let vm = this;
     vm.route.params.switchMap(function (params: Params) {
       let tagName = params['tagName'];
-      vm.logger.info('Load Post by Tag:',tagName);
+      vm.logger.info('Load Post by Tag:', tagName);
       vm.tagName = tagName;
-      vm.titleService.setTitle('Tag:'+tagName);
+      vm.titleService.setTitle('Tag:' + tagName);
       return vm.posts.queryByTagName(tagName);
     }).subscribe(function (postList) {
       vm.postList = postList;

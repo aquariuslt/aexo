@@ -1,13 +1,14 @@
 {
-  "name": "aexo",
-  "version": "1.0.0",
+  "name": "blog.aquariuslt.com",
+  "version": "2.0.1",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
+    "build": "ng build --prod",
     "start": "gulp build && ng serve",
-    "start:dev": "ng serve --port 5000",
-    "build": "ng build",
-    "lint": "ng lint"
+    "test": "ng test",
+    "compile": "ng build --prod && gulp build:prod",
+    "deploy": "gulp clean && ng build --prod && gulp build:prod && gulp upload"
   },
   "private": true,
   "dependencies": {

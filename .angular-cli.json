@@ -1,7 +1,7 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "project": {
-    "name": "aexo"
+    "name": "blog.aquariuslt.com"
   },
   "apps": [
     {
@@ -9,7 +9,8 @@
       "outDir": "dist",
       "assets": [
         "assets",
-        "favicon.ico"
+        "app-icon.png",
+        "manifest.webapp"
       ],
       "index": "index.html",
       "main": "main.ts",
@@ -20,6 +21,7 @@
       "styles": [
         "styles.css"
       ],
+      "serviceWorker": true,
       "scripts": [],
       "environmentSource": "environments/environment.ts",
       "environments": {

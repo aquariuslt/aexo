@@ -1,1 +1,1 @@
-#　AEXO
+# blog.aquariuslt.com

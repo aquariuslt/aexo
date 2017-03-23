@@ -4,11 +4,11 @@
 
 # Blog Variables
 blog:
-  name: 'Aquariuslt Blog'
+  name: 'AEXO'
   # Avator Relative URL, example: assets/images/avator.png
   avator: 'assets/images/avator.png'
-  author: 'Aquariuslt'
-  description: 'Coder,WoWer'
+  author: 'Author'
+  description: 'Description'
   externalLinks:
     -
       label: 'Social'
@@ -17,38 +17,27 @@ blog:
           url: 'https://github.com/aquariuslt'
           displayName: 'Github'
           description: 'Github'
-        -
-          url: 'https://twitter.com/superaquariuslt'
-          displayName: 'Twitter'
-          description: 'Twitter'
-        -
-          url: 'https://aquariuslt.com'
-          displayName: 'Posts Archive'
-          description: 'Past Version Blog'
 
     -
       label: 'Friend Links'
       links:
         -
-          displayName: 'wxsm blog'
-          url: 'https://wxsm.space'
-          description: 'Kary Gor博客,前端大神'
-        -
-          displayName: 'lousama'
-          url: 'http://lousama.com'
+          displayName: 'Aquariuslt Blog'
+          url: 'https://blog.aquariuslt.com'
           description: ''
-        -
-          displayName: 'NotFound404'
-          url: 'https://github.com/404NoFound'
-          description: '车底良哥'
 
 
 
-# Hidden Category Lists
+  # Hidden Category Lists
   categories:
     filter: true
     hidden:
-      - 'Else'
+      - 'Secret'
+
+  tags:
+    filter: true
+    hidden:
+      - 'Secret'
 
   # Enable About Page
   about:
@@ -56,17 +45,30 @@ blog:
 
 
   # Disqus Config
+  # Replace your disqus config here.
   disqus:
     enable: true
-    shortName: 'aquariuslt'
+    shortName: 'disqus'
+
+  # Progressive Web App
+  pwa:
+    enable: true
+    name: 'Your AEXO app name'
+    shortName: 'Blog'
+    description: 'Your AEXO app description'
+    icon: 'app-icon.png'
+    developer:
+      name: 'Aquariuslt'
+      url: 'https://github.com/aquariuslt'
 
 # Blog Deploy Options
 # Domain
-cname: 'blog.aquariuslt.com'
+# cname: 'blog.yoursite.com'
 
 # Deploy
+# Replace with your github.io repository url here
 deploy:
-  repo: 'https://github.com/Aquariuslt/aquariuslt.github.io.git'
+  repo: 'https://github.com/xxxx/xxxx.github.io.git'
   remote: 'origin'
   branch: 'master'
   cacheDir: '.cache'

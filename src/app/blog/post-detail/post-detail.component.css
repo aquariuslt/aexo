@@ -1,6 +1,6 @@
 .post-detail {
   max-width: 900px;
-  width:100%;
+  width: 100%;
 }
 
 .post-detail-header {
@@ -18,7 +18,7 @@
   padding-bottom: 5px;
 }
 
-.post-meta{
+.post-meta {
   padding-top: 10px;
   padding-bottom: 10px;
 }

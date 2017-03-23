@@ -1,0 +1,22 @@
+{
+  "name": "",
+  "short_name": "",
+  "description":"",
+  "developer":{
+    "name":"",
+    "url":""
+  },
+  "icons": [
+    {
+      "src": "app-icon.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "density": 0.75
+    }
+  ],
+  "theme_color": "#1976d2",
+  "background_color": "#1976d2",
+  "start_url": "index.html",
+  "display": "standalone",
+  "orientation": "portrait"
+}

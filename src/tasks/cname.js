@@ -5,9 +5,17 @@ import inject from "gulp-inject-string";
 import rename from "gulp-rename";
 import gulp from "gulp";
 import _ from "lodash";
+import * as fs from "fs";
 
 gulp.task('cname', function (next) {
-  let cname = config.cname;
+  logger.info('Generate CNAME file:');
+
+  let applicationPropertiesPath = config.buildDir + '/' + config.output.application;
+  let applicationPropertiesString = fs.readFileSync(applicationPropertiesPath).toString();
+  let applicationProperties = JSON.parse(applicationPropertiesString);
+
+
+  let cname = applicationProperties.cname;
 
   if (!_.isUndefined(cname)) {
     logger.info('Generating CNAME file:', cname);

@@ -23,18 +23,25 @@
 .avator {
   width: 100%;
   height: auto;
-  padding: 15px;
+  padding: 5px;
   border-radius: 50%;
 }
 
 .avator-background {
-  min-height: 150px;
+  min-height: 120px;
+  padding: 5px;
 }
 
 .author {
+  padding-left: 11px;
+  font-weight: 500;
   font-size: 14px;
 }
 
 .author-description {
-  font-size: 14px;
+  padding-left: 11px;
+  padding-top: 5px;
+  font-weight: 500;
+  opacity: 0.6;
+  font-size: 13px;
 }

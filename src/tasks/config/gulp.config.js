@@ -9,10 +9,12 @@
 
 let config = {
 
-  appConfig:'application.yml',
+  appConfig: 'application.yml',
   buildDir: 'build',
   distDir: 'dist',
+  cacheDir: '.cache',
   emptyFile: 'src/tasks/empty.js',
+  manifest: 'src/manifest.webapp',
 
   input: {
     posts: 'src/data/posts/**/*.md'
@@ -21,21 +23,8 @@ let config = {
   output: {
     posts: 'posts.json',
     categories: 'categories.json',
-    tags: 'tags.json'
-  },
-
-
-  cname: 'blog.aquariuslt.com',
-  deployOptions: {
-    repo: 'https://github.com/Aquariuslt/aquariuslt.github.io.git',
-    // repo: 'https://git.coding.net/Aquariuslt/aquariuslt.coding.me.git',
-    remote: 'origin',
-    branch: 'master',
-    cacheDir: '.cache',
-    clone: '.cache',
-    logger: function (message) {
-      console.log(message);
-    }
+    tags: 'tags.json',
+    application: 'application.json'
   }
 
 

@@ -2,39 +2,39 @@
   padding: 3px;
 }
 
-.category-list{
+.category-list {
   padding-left: 15px;
   padding-right: 15px;
   padding-top: 10px;
 }
 
-.category-title{
+.category-title {
   font-weight: 600;
   font-size: 18px;
   padding-right: 10px;
 }
 
-.category-chip{
-  margin-bottom:5px !important;
+.category-chip {
+  margin-bottom: 5px !important;
 }
 
-.non-selected{
-  background:grey;
+.non-selected {
+  background: grey;
 }
 
-.non-selected:hover{
+.non-selected:hover {
   cursor: pointer;
 }
 
-.selected{
-  background:#1990df;
+.selected {
+  background: #1990df;
 }
 
-.selected:hover{
+.selected:hover {
   cursor: pointer;
 }
 
-.post-date{
+.post-date {
   font-size: 15px;
   opacity: 0.5;
   padding-bottom: 5px;

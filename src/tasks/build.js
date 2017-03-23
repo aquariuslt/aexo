@@ -8,9 +8,9 @@ import "./clean";
 import "./tags";
 import "./categories";
 
-gulp.task('build', gulpSequence(['properties'], ['posts'], ['categories'], ['tags']));
+gulp.task('build', gulpSequence(['properties'], ['posts'], ['categories'], ['tags'],['pwa']));
 
-gulp.task('build:prod', gulpSequence(['properties'], ['posts'], ['categories'], ['tags'], ['cname'], ['move']));
+gulp.task('build:prod', gulpSequence(['properties'], ['posts'], ['categories'], ['tags'], ['pwa'],['cname'], ['move']));
 
 
 gulp.task('move', function () {
