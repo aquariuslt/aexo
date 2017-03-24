@@ -12,7 +12,7 @@
 ```bash
 npm install aexo -g
 
-aexo new new-blog-app
+aexo new new-blog-app && cd new-blog-app && npm install
 aexo run
 ```
 
@@ -22,3 +22,9 @@ Then see your browser in document
 
 
 ## Further understanding
+
+
+## Deploy 
+```bash
+aexo deploy
+```
