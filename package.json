@@ -1,6 +1,6 @@
 {
   "name": "aexo",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "license": "MIT",
   "repository": "https://github.com/aquariuslt/aexo",
   "bin": {
@@ -9,11 +9,11 @@
   "scripts": {
     "ng": "ng",
     "build": "ng build --prod",
-    "start": "gulp build && ng serve",
+    "start": "gulp build && ng serve --open",
     "test": "ng test",
     "compile": "ng build --prod && gulp build:prod",
     "deploy": "gulp clean && ng build --prod && gulp build:prod && gulp upload",
-    "build:cli": "babel aexo.js --out-file aexo-cli.js"
+    "build:cli": "babel aexo-cli-src.js --out-file aexo-cli.js"
   },
   "dependencies": {
     "@angular/cli": "1.0.0-rc.2",
